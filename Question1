@@ -1,0 +1,54 @@
+# Simple ATM Machine
+PIN='1234'
+Attempts=0
+balance=10000
+while Attempts < 3:
+    enter=input("Enter your PIN: ")
+    if enter == PIN:
+        print("Correct PIN, You are login Successfully")
+
+        print("1. Proceed to Menu")
+        print("2. Exit")
+        login=input("Enter your Choice: ")
+        if login=="1":
+            break
+        elif login=="2":
+            print("Thank you for visiting. Goodbye!")
+            exit()
+        else:
+            print("Invalid Choice")
+            exit()
+    else:
+        Attempts+=1
+        print(f"Incorrect PIN. Attempts left: {3-Attempts}")
+else:
+    print("Account Locked")
+    exit()
+while True:
+    print("Welcome to Simple ATM_")
+    print("1. Check the balace")
+    print("2. Deposite Money")
+    print("3. Withdraw Money")
+    print("4. Exit")
+
+    choice=input("Enter your Choice: ")
+    if choice== "1":
+        print(f"Check the Balance : {balance}")
+    elif choice=="2":
+        amount=int(input("Enter your Deposite Amount:"))
+        if amount<=0:
+            print("Invalid amount")
+        else :
+            balance +=amount
+            print(f"Deposite Successfully New Balance:{balance}")
+            
+    elif choice=="3":
+        amount=int(input("Enter your Withdrawal Amount: "))
+        if amount<=0:
+            print("Invalid Withdrawal amount")
+        else:
+            balance-=amount
+            print(f"Withdrawal Successfully New Withdrawal amount{balance}")
+    elif choice=="4":
+        print("Thanks you for using Simple ATM")
+        exit()
